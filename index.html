@@ -24,6 +24,8 @@
 
 var loss = 0;
 var wins= 0;
+var guessesRemaining = 9;
+var userGuesses = [];
 
 var gamesWon = document.getElementById("gamesWon");
 var gamesLost = document.getElementById("gamesLost");
@@ -33,27 +35,49 @@ var guessesLeft = document.getElementById("guessesLeft");
 var guessList = document.getElementById("guessList");
 
 
+function game1() {
+    
 document.onkeyup = function(event) {
     var userGuess = event.key;
-
+        if (alphabetChoices.includes(userGuess) == true) {
+       
+    userGuesses.push(userGuess);
     var computerGuess = alphabetChoices[Math.floor(Math.random() * alphabetChoices.length)];
     
-    for (i=9; i = 0; i--) {
         if ((userGuess === computerGuess)) {
         wins++;
+        restart();
     } else {
-        loss++;
+        guessesRemaining--;
         }
-    }
+
+        if ((guessesRemaining === 0)) {
+            loss++;
+            restart();
+            
+        }
 
 
 gamesWon.textContent = wins;
 gamesLost.textContent = loss;
-guessList.textContent = "your guesses so far: " + userGuess;
+guessList.textContent = "your guesses so far: " + userGuesses.join(", ");
+guessesLeft.textContent = "Guesses Left: " + guessesRemaining;
+    }
+    else {
+        alert("Please pick a letter");
+    };
+};
 
 };
 
-    </script>
+game1();
+
+function restart() {
+    guessesRemaining = 9;
+    userGuesses = [];
+    game1();
+};
+  </script>
 
 
 
