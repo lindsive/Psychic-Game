@@ -3,23 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="./assets/javascript/game.js"></script>
+    <!-- <script src="./assets/javascript/game.js"></script> -->
 </head>
 
 <body>
-    <h1>The Psychic Game</h1>
+    <h1 id="heading">The Psychic Game</h1>
 
-    <p>Guess what letter I'm thinking of</p>
+    <p id="directions">Guess what letter I'm thinking of</p>
   
-    <p>Wins:</p>
+    <p id="gamesWon">Wins:</p>
 
-    <p>Loses:</p>
+    <p id="gamesLost">Losses:</p>
 
-    <p>Guesses Left:</p>
+    <p id="guessesLeft">Guesses Left:</p>
     
     <p id="guessList">Your guesses so far:</p>
 
+    <script>
+    var alphabetChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+var loss = 0;
+var wins= 0;
+
+var gamesWon = document.getElementById("gamesWon");
+var gamesLost = document.getElementById("gamesLost");
+var gameTitle = document.getElementById("heading");
+var gameDirections = document.getElementById("directions");
+var guessesLeft = document.getElementById("guessesLeft");
+var guessList = document.getElementById("guessList");
+
+
+document.onkeyup = function(event) {
+    var userGuess = event.key;
+
+    var computerGuess = alphabetChoices[Math.floor(Math.random() * alphabetChoices.length)];
+    
+    for (i=9; i = 0; i--) {
+        if ((userGuess === computerGuess)) {
+        wins++;
+    } else {
+        loss++;
+        }
+    }
+
+
+gamesWon.textContent = wins;
+gamesLost.textContent = loss;
+guessList.textContent = "your guesses so far: " + userGuess;
+
+};
+
+    </script>
 
 
 
