@@ -5,22 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Psychic Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1 id="heading">The Psychic Game</h1>
 
-    <p id="directions">Guess what letter I'm thinking of</p>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">The Psychic Game</h1>
+            <p class="lead">Guess what letter I'm thinking of!</p>
+        </div>
+    </div>
 
-    <p id="gamesWon">Wins:</p>
+    <h2><span class="badge badge-secondary" id="gamesWon">Wins:</span></h2>
 
-    <p id="gamesLost">Losses:</p>
+    <h2> <span class="badge badge-secondary" id="gamesLost">Losses:</span></h2>
 
-    <p id="guessesLeft">Guesses Left:</p>
+    <h2><span class="badge badge-secondary" id="guessesLeft">Guesses Left:</span></h2>
 
-    <p id="guessList">Your guesses so far:</p>
+    <h2><span class="badge badge-secondary" id="guessList">Your Guesses So Far:</span></h2>
 
-<!--JavaScript -->
+    <!--JavaScript -->
     <script src="./assets/javascript/game.js"></script>
 
 </body>

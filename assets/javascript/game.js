@@ -38,7 +38,7 @@ function game1() {
 
             gamesWon.textContent = "Wins: " + wins;
             gamesLost.textContent = "Losses: " + loss;
-            guessList.textContent = "your guesses so far: " + userGuesses.join(", ");
+            guessList.textContent = "Your Guesses So Far: " + userGuesses.join(", ");
             guessesLeft.textContent = "Guesses Left: " + guessesRemaining;
         }
         else {
